@@ -1,0 +1,272 @@
+************************************************EXO1***************************************************
+
+#include<iostream>
+
+using namespace std;
+
+class Famille{
+	public:
+		int number;
+		string name;
+		void insersion(int a, string b)
+		{
+			number = a;
+			name = b;
+		}
+		void display()
+		{
+			cout<<number<<" "<<name<<endl;
+		}
+};
+
+int main()
+{
+	Famille a1;
+	Famille a2;
+	
+	a1.insersion (01, "parent");
+	a2.insersion (02 , "enfant");
+	
+	a1.display();
+	a2.display();
+	return 0;
+}
+
+
+********************************************************************EX02************************************
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+class shape{
+	
+	public:
+	int hauteur;
+	int largeur;
+	void constructeur( int l, int H )
+	{
+		largeur = l;
+		hauteur = H;
+	}
+};
+
+class triangle : public shape{
+	
+	public:
+		
+	int base;
+	float air;
+	
+	void Aire(int n){
+		
+		base = n;
+		air = (base*hauteur)/2 ;
+	}
+};
+
+class rectangle : public shape{
+	
+	public:
+		
+	int langueur;
+	float rect;
+	void Recta(int m)
+	{
+		langueur = m;
+		rect = (langueur+largeur)*2;
+	}
+};
+
+class Area : public triangle, public rectaangle
+{
+	public:
+		
+		void display()
+		{
+			cout<<"la valeur de la base est :"<<base<<endl;
+			cout<<"la valeur de la langueur est :"<<langueur<<endl;
+			
+			
+			cout<<"la valeur de air triangle A est:"<<air;
+			
+			cout<<"la valeur de air triangle Ar est:"<<rect;
+		}
+};
+
+int main()
+{
+	Area x;
+	
+	x.Aire(10);
+	x.recta(5);
+	x.constructeur(4, 8);
+	x.display();
+	
+	return 0;
+}
+
+
+
+
+*************************************************************************EXO3*****************************************************
+#include <iostream>
+using namespace std;
+class Complex{
+  
+  public:
+  double real, imag;
+  Complex(double r, double i){
+    real = r;
+    imag = i;
+  }
+};
+int main(){
+  double r1, i1;
+  cout << "Premier nombre \n";
+  cout << "Entrez la partie réelle: ";
+  cin >> r1;
+  cout << "Entrez la partie imaginaire: ";
+  cin >> i1;
+  
+  //créer le nombre complexe 1
+  Complex c1(r1, i1);
+  
+  cout << "Deuxième nombre\n";
+  double r2, i2;
+  cout << "Entrez la partie réelle: ";
+  cin >> r2;
+  cout << "Entrez la partie imaginaire: ";
+  cin >> i2;
+  //créer le nombre complexe 2  
+  Complex c2(r2, i2);
+  // calculer la somme des deux nombres complexes c1 et c2
+  double r = c1.real + c2.real;
+  double i = c1.imag + c2.imag;
+  cout << "La somme est "<< r << " + " << i << "i";
+  // calcule soustraction
+  double r = c1.real - c2.real;
+  double i = c1.imag - c2.imag;
+  cout<<"la soustraction est"<<r<<"-"<<i<<"i";
+  return 0;
+}
+
+
+*************************************************************************EXO4*****************************************************
+#include <iostream>
+using namespace std;
+ 
+class Myclass
+{
+private:
+    int Id;
+    double vitesse;
+ 
+public:
+	// constructeur par defaut
+    Voiture()
+    {
+        Id = 1;
+        vitesse = 250.5;
+        cout << "Je suis le constructeur par défaut" << endl;
+    }
+    // destructeur le maitre
+    ~Voiture()
+    {
+    	cout<<"je suis le destructeur le maitre" <<endl;
+    	delete[] marque;
+	}
+};
+ 
+int main(void)
+{
+    Myclass v1;
+    Myclass v2;
+    return 0;
+}
+
+
+
+*************************************************************************EXO5*****************************************************
+#include<iostream>
+using namespace std;
+
+
+class Animal
+{
+		protected:
+		char nom[20];
+		int age;
+		
+		public:
+			Animal(int, char[]);
+		void set_value();
+};
+class Zebra : public Animal
+{
+	protected:
+		char originaire[20];
+		public:
+			Zebra(int, char[], char[]);
+
+		
+};
+class Dolphin : public Animal
+{
+	protected:
+		char provenance;
+		public:
+			Dolphin(int, char[], char[]);
+};
+void display(){
+	
+	cout<<"le Zebra is:"<<zebra<<endl;
+	cout<<"Dolph is:"<<Dolph<<endl;
+}
+int main()
+{
+	Animal x;
+	
+	x.zebra(20, PANTHERE, Afrique nord);
+	x.Dolphin(35, APPT, Afrique central);
+	x.display();
+	return 0;
+}
+
+
+
+*************************************************************************EXO6*****************************************************
+
+class Personne
+{
+    private:
+        char nom[20];
+        char prenom[30];
+        char brith[100];
+ 
+    public:
+        Personne(int, char[], char[]);
+        void afficher();
+};
+class Enployee : public Personne
+{
+    private:
+        double salaire;
+ 
+    public:
+        Professeur(int, char[], char[], double);
+};
+class chef : public Employee
+{
+    private:
+         char service [45];
+ 
+    public:
+        chef(double, char[]);
+};
+class Directeur : public chef
+{
+	private:
+		char accompagner[45];
+    public:
+        Directeur(char[], char[]);
+};
